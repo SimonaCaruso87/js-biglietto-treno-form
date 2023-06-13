@@ -16,12 +16,12 @@
 
 // 1)Chiedere all'utente il numero di km che vuole percorrere
 
-const userDataVoyage = parseInt (prompt ('Inserisci il numero dei Km che dovrai percorrere'));
+const userDataVoyage = parseInt('Inserisci il numero dei Km che dovrai percorrere');
 
 console.log('userDataVoyage', userDataVoyage , typeof userDataVoyage);
 
 //2)Chiedere all'utente l'età
-const userDataAge = parseInt (prompt ('Inserisci la tua età'));
+const userDataAge = parseInt('Inserisci la tua età');
 
 console.log('userDataAge', userDataAge , typeof userDataAge);
 
@@ -49,18 +49,30 @@ else if( userDataAge >= 65){
 else{
     //non gli applico nessuno sconto
     const price = 0.21 * userDataVoyage ;
-    console.log('Il Prezzo a persona è' , price);
+    console.log('Il Prezzo per una persona X è' , price);
 
     document.querySelector('h4').innerHTML = 'Il Prezzo del Biglietto è: €' + price.toFixed(2);
 }
 
 //Inserisci un allert
 
-if(isNaN(userDataAge)){
-    //se l'utente non inserisce un numero nel campo Età
-    alert('Devi inserire un numero');
-}
-if(isNaN(userDataVoyage)){
-    //se l'utente non inserisce un numero nel campo Km
-    alert('Devi inserire i chilometri');
-}
+// if(isNaN(userDataAge)){
+//     se l'utente non inserisce un numero nel campo Età
+//     alert('Devi inserire un numero');
+// }
+// if(isNaN(userDataVoyage)){
+//     se l'utente non inserisce un numero nel campo Km
+//     alert('Devi inserire i chilometri');
+// }
+
+const myButton = document.getElementById('click-button');
+
+myButton.addEventListener('click', 
+    function() {
+        const kmInput = document.querySelector('[name="km"]');
+        const ageInput = document.querySelector('[name="age"]');
+
+        h1.innerHTML = 'KM da percorrere: ' + kmInput.value;
+        h1.innerHTML += ' | Età dell utente: ' + ageInput.value;
+    }
+);
