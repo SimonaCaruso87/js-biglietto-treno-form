@@ -28,22 +28,22 @@
     <!-- Section Calcola il prezzo del tuo biglietto -->
         <div class="bg-white border-5 rounded-5 p-5">
 
-            <form class="row g-3">
+            <form class="row g-3 calc-form" action="" method="get">
                 <div class="col-md-4 text-center">
-                    <label class="border-0 my-text fs-4" for="">
+                    <label class="card d-flex flex-column border-0 my-text fs-4" for="">
                         Nome Cognome
                     </label>
                     <input type="name" name="name" placeholder="Silvio Berlusconi" input="inputName">
                 </div>    
-                <div class="col-md-4">
+                <div class="col-md-4 my-div">
                     <label class="card my-text fs-4 border-0" for="">
                         Km Da Percorrere
                     </label>
-                    <input type="number" name="km" placeholder="Inserisci i Km">
+                    <input required id="userDataVoyage" type="number" name="userDataVoyage" placeholder="Inserisci i Km">
                 </div>
-                <div class="col-md-4 text-center d-flex">
-                    <label for="inputState" class="card form-label my-text fs-4 border-0">Fascia D'età</label>
-                    <select id="inputState" class="form-select w-50 text-center fs-4 d-flex justify-content-center align-items-center">
+                <div class="col-md-4">
+                    <label required min="0" max="150" class="card form-label my-text fs-4 d-flex flex-column border-0" name="userDataAge" for="userDataAge">Fascia D'età</label>
+                    <select id="inputState" class="form-select w-50 text-center fs-4">
                     <option value="Maggiorenne" selected>Maggiorenne</option>
                     <option value="Minorenne">Minorenne</option>
                     <option value="Over 65">Over 65</option>
@@ -53,7 +53,7 @@
                     <button class="offset-md-5 col-md-1 my-text fw-bold my-border fs-3 border-5 rounded-2 bg-danger" id="click-button" type="button">
                         Genera
                     </button>
-                    <button class="ms-3 col-md-1 my-text fw-bold my-border fs-3 border-5 rounded-2 bg-danger" id="click-button" type="button">
+                    <button class="ms-3 col-md-1 my-text fw-bold my-border fs-3 border-5 rounded-2 bg-danger" id="calc-reset" type="reset">
                         Annulla
                     </button>
                 </div>
@@ -85,8 +85,8 @@
                 </div>
             </div>
             <div class="bg-white border border-black d-inline-block">
-                <div class="my-button km">
-                  
+                <div class="priceTotal p-5 bg-info">
+                 Il costo del biglietto è: €
                 </div>
             </div>
 
